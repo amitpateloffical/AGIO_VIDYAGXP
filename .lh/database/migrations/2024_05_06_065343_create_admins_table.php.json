@@ -1,0 +1,110 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_065343_create_admins_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 23,
+            "patches": [
+                {
+                    "date": 1714978437288,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714978444139,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('admins', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('product_id')->unsigned()->nullable();\n+            $table->integer('role_id')->unsigned()->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714978484510,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,9 +13,9 @@\n      */\n     public function up()\n     {\n         Schema::create('admins', function (Blueprint $table) {\n-            $table->id();\n+            $table->id()->uns;\n             $table->integer('role_id')->unsigned()->nullable();\n \n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1714978493327,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -13,11 +13,13 @@\n      */\n     public function up()\n     {\n         Schema::create('admins', function (Blueprint $table) {\n-            $table->id()->uns;\n+            $table->id()->unsigned();\n             $table->integer('role_id')->unsigned()->nullable();\n+            $table->integer('product_id')->unsigned()->nullable();\n \n+\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714978503270,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     {\n         Schema::create('admins', function (Blueprint $table) {\n             $table->id()->unsigned();\n             $table->integer('role_id')->unsigned()->nullable();\n-            $table->integer('product_id')->unsigned()->nullable();\n+            $table->string('product_id')->unsigned()->nullable();\n \n \n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1714978513761,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     {\n         Schema::create('admins', function (Blueprint $table) {\n             $table->id()->unsigned();\n             $table->integer('role_id')->unsigned()->nullable();\n-            $table->string('product_id')->unsigned()->nullable();\n+            $table->string('name')->nullable();\n \n \n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1714978523842,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n         Schema::create('admins', function (Blueprint $table) {\n             $table->id()->unsigned();\n             $table->integer('role_id')->unsigned()->nullable();\n             $table->string('name')->nullable();\n+            $table->string('name')->nullable();\n \n-\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714978530553,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,8 +17,10 @@\n             $table->id()->unsigned();\n             $table->integer('role_id')->unsigned()->nullable();\n             $table->string('name')->nullable();\n             $table->string('name')->nullable();\n+            $table->string('name')->nullable();\n+            $table->string('name')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714978537711,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,9 @@\n     {\n         Schema::create('admins', function (Blueprint $table) {\n             $table->id()->unsigned();\n             $table->integer('role_id')->unsigned()->nullable();\n+            $table->string('email')->nullable();\n             $table->string('name')->nullable();\n             $table->string('name')->nullable();\n             $table->string('name')->nullable();\n             $table->string('name')->nullable();\n"
+                },
+                {
+                    "date": 1714978549206,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,12 +16,12 @@\n         Schema::create('admins', function (Blueprint $table) {\n             $table->id()->unsigned();\n             $table->integer('role_id')->unsigned()->nullable();\n             $table->string('email')->nullable();\n+            $table->string('miobile')->nullable();\n             $table->string('name')->nullable();\n             $table->string('name')->nullable();\n             $table->string('name')->nullable();\n-            $table->string('name')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714978558832,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,12 +16,12 @@\n         Schema::create('admins', function (Blueprint $table) {\n             $table->id()->unsigned();\n             $table->integer('role_id')->unsigned()->nullable();\n             $table->string('email')->nullable();\n-            $table->string('miobile')->nullable();\n+            $table->string('mobile')->nullable();\n+            $table->string('username')->nullable();\n             $table->string('name')->nullable();\n             $table->string('name')->nullable();\n-            $table->string('name')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714978564263,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n             $table->integer('role_id')->unsigned()->nullable();\n             $table->string('email')->nullable();\n             $table->string('mobile')->nullable();\n             $table->string('username')->nullable();\n+            $table->string('image')->nullable();\n             $table->string('name')->nullable();\n-            $table->string('name')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714978570924,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             $table->string('email')->nullable();\n             $table->string('mobile')->nullable();\n             $table->string('username')->nullable();\n             $table->string('image')->nullable();\n-            $table->string('name')->nullable();\n+            $table->string('password')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714978578836,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n             $table->string('mobile')->nullable();\n             $table->string('username')->nullable();\n             $table->string('image')->nullable();\n             $table->string('password')->nullable();\n+            $table->string('image')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714978585389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,8 +21,11 @@\n             $table->string('username')->nullable();\n             $table->string('image')->nullable();\n             $table->string('password')->nullable();\n             $table->string('image')->nullable();\n+            $table->string('image')->nullable();\n+            $table->string('image')->nullable();\n+            $table->string('image')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714978591968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,12 +20,12 @@\n             $table->string('mobile')->nullable();\n             $table->string('username')->nullable();\n             $table->string('image')->nullable();\n             $table->string('password')->nullable();\n+            $table->string('status')->nullable();\n             $table->string('image')->nullable();\n             $table->string('image')->nullable();\n             $table->string('image')->nullable();\n-            $table->string('image')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714978614501,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n             $table->string('mobile')->nullable();\n             $table->string('username')->nullable();\n             $table->string('image')->nullable();\n             $table->string('password')->nullable();\n-            $table->string('status')->nullable();\n+            $table->inte('status')->nullable();\n             $table->string('image')->nullable();\n             $table->string('image')->nullable();\n             $table->string('image')->nullable();\n \n"
+                },
+                {
+                    "date": 1714978632536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,12 +20,12 @@\n             $table->string('mobile')->nullable();\n             $table->string('username')->nullable();\n             $table->string('image')->nullable();\n             $table->string('password')->nullable();\n-            $table->inte('status')->nullable();\n+            $table->integer('status')->nullable();\n+            $table->string('reme')->nullable();\n             $table->string('image')->nullable();\n             $table->string('image')->nullable();\n-            $table->string('image')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714978641717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n             $table->string('username')->nullable();\n             $table->string('image')->nullable();\n             $table->string('password')->nullable();\n             $table->integer('status')->nullable();\n-            $table->string('reme')->nullable();\n+            $table->string('remem')->nullable();\n             $table->string('image')->nullable();\n             $table->string('image')->nullable();\n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714978660527,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n             $table->string('username')->nullable();\n             $table->string('image')->nullable();\n             $table->string('password')->nullable();\n             $table->integer('status')->nullable();\n-            $table->string('remem')->nullable();\n+            $table->string('remember_')->nullable();\n             $table->string('image')->nullable();\n             $table->string('image')->nullable();\n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714978666155,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,9 @@\n             $table->string('username')->nullable();\n             $table->string('image')->nullable();\n             $table->string('password')->nullable();\n             $table->integer('status')->nullable();\n-            $table->string('remember_')->nullable();\n+            $table->string('remember_tokern')->nullable();\n             $table->string('image')->nullable();\n             $table->string('image')->nullable();\n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714978676172,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,11 +21,10 @@\n             $table->string('username')->nullable();\n             $table->string('image')->nullable();\n             $table->string('password')->nullable();\n             $table->integer('status')->nullable();\n-            $table->string('remember_tokern')->nullable();\n-            $table->string('image')->nullable();\n-            $table->string('image')->nullable();\n+            $table->string('remember_token')->nullable();\n+           \n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714978682875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,8 @@\n             $table->string('image')->nullable();\n             $table->string('password')->nullable();\n             $table->integer('status')->nullable();\n             $table->string('remember_token')->nullable();\n-           \n-\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714978711801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n             $table->string('mobile')->nullable();\n             $table->string('username')->nullable();\n             $table->string('image')->nullable();\n             $table->string('password')->nullable();\n-            $table->integer('status')->nullable()->de;\n+            $table->integer('status')->nullable()->def;\n             $table->string('remember_token')->nullable();\n             $table->timestamps();\n         });\n     }\n"
+                }
+            ],
+            "date": 1714978437288,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('admins', function (Blueprint $table) {\n            $table->id();\n            $table->integer('product_id')->unsigned()->nullable();\n\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('admins');\n    }\n};\n"
+        }
+    ]
+}

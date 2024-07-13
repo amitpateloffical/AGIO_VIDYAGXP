@@ -1,0 +1,30 @@
+{
+    "sourceFile": "app/Http/Controllers/Admin/NewExpiryController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1719219324358,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1719219331120,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,6 @@\n use Illuminate\\Http\\Request;\n \n class NewExpiryController extends Controller\n {\n-    public ech\n+    public \n }\n"
+                },
+                {
+                    "date": 1719219336776,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,6 +6,6 @@\n use Illuminate\\Http\\Request;\n \n class NewExpiryController extends Controller\n {\n-    public  function $table->index('column');\n+    public  function index\n }\n"
+                },
+                {
+                    "date": 1719219347411,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,7 +8,7 @@\n class NewExpiryController extends Controller\n {\n     public  function index()\n     {\n-        retrun\n+        retru\n     }\n }\n"
+                }
+            ],
+            "date": 1719219324358,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers\\Admin;\n\nuse App\\Http\\Controllers\\Controller;\nuse Illuminate\\Http\\Request;\n\nclass NewExpiryController extends Controller\n{\n    public ech\n}\n"
+        }
+    ]
+}

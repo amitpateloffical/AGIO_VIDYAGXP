@@ -1,0 +1,26 @@
+{
+    "sourceFile": "database/seeders/GeneralSettingSeeder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1714999555801,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714999568717,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,9 @@\n <?php\n \n namespace Database\\Seeders;\n \n+use App\\Models\\GeneralSetting;\n use Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\n use Illuminate\\Database\\Seeder;\n \n class GeneralSettingSeeder extends Seeder\n@@ -13,7 +14,8 @@\n      * @return void\n      */\n     public function run()\n     {\n-        $gs = new General\n+        $gs = new GeneralSetting;\n+        $gs->name = 'VidyaGxp';\n     }\n }\n"
+                },
+                {
+                    "date": 1714999575002,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,7 +15,7 @@\n      */\n     public function run()\n     {\n         $gs = new GeneralSetting;\n-        $gs->name = 'VidyaGxp';\n+        $gs->site_name = 'VidyaGxp';\n     }\n }\n"
+                }
+            ],
+            "date": 1714999555801,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace Database\\Seeders;\n\nuse Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\nuse Illuminate\\Database\\Seeder;\n\nclass GeneralSettingSeeder extends Seeder\n{\n    /**\n     * Run the database seeds.\n     *\n     * @return void\n     */\n    public function run()\n    {\n        $gs = new General\n    }\n}\n"
+        }
+    ]
+}

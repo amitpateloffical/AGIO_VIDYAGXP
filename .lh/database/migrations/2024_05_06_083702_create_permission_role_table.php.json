@@ -1,0 +1,34 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_083702_create_permission_role_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1714984662522,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714984672889,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,11 @@\n     public function up()\n     {\n         Schema::create('permission_role', function (Blueprint $table) {\n             $table->id();\n-            \n+            $table->longtext('permission_id')->unsigned()->nullable();\n+            $table->longtext('role_id')->unsigned()->nullable();\n+\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714994567466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     {\n         Schema::create('permission_role', function (Blueprint $table) {\n             $table->id();\n             $table->longtext('permission_id')->unsigned()->nullable();\n-            $table->longtext('role_id')->unsigned()->nullable();\n+            $table->longtext('role_id')->unsig->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714994577160,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     {\n         Schema::create('permission_role', function (Blueprint $table) {\n             $table->id();\n             $table->longtext('permission_id')->unsigned()->nullable();\n-            $table->longtext('role_id')->unsig->nullable();\n+            $table->longtext('role_id')->unsigned()->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714994656351,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n     public function up()\n     {\n         Schema::create('permission_role', function (Blueprint $table) {\n             $table->id();\n-            $table->longtext('permission_id')->unsigned()->nullable();\n-            $table->longtext('role_id')->unsigned()->nullable();\n+            $table->bigInteger('permission_id')->unsigned()->nullable(); // Corrected here\n+            $table->bigInteger('role_id')->unsigned()->nullable(); \n \n             $table->timestamps();\n         });\n     }\n"
+                }
+            ],
+            "date": 1714984662522,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('permission_role', function (Blueprint $table) {\n            $table->id();\n            \n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('permission_role');\n    }\n};\n"
+        }
+    ]
+}

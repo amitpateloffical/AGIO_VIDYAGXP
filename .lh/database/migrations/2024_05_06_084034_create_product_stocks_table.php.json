@@ -1,0 +1,22 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_084034_create_product_stocks_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1714984853089,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714984861009,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('product_stocks', function (Blueprint $table) {\n             $table->id();\n             $table->integer('product_id')->unsigned()->nullable();\n             $table->integer('warehouse_id')->unsigned()->nullable();\n-            $table->integer('quantity')->unsigned()->nullable();\n+            $table->integer('quantity')->unsigned()->nullable()->defaul;\n \n             $table->timestamps();\n         });\n     }\n"
+                }
+            ],
+            "date": 1714984853089,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('product_stocks', function (Blueprint $table) {\n            $table->id();\n            $table->integer('product_id')->unsigned()->nullable();\n            $table->integer('warehouse_id')->unsigned()->nullable();\n            $table->integer('quantity')->unsigned()->nullable();\n\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('product_stocks');\n    }\n};\n"
+        }
+    ]
+}

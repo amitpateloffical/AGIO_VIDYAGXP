@@ -1,0 +1,58 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_072709_create_notification_logs_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 10,
+            "patches": [
+                {
+                    "date": 1714980444380,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714980451062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,15 @@\n     public function up()\n     {\n         Schema::create('notification_logs', function (Blueprint $table) {\n             $table->id();\n-            \n+            $table->string('cur_sym')->nullable();\n+            $table->string('cur_sym')->nullable();\n+            $table->string('cur_sym')->nullable();\n+            $table->string('cur_sym')->nullable();\n+            $table->string('cur_sym')->nullable();\n+            $table->string('cur_sym')->nullable();\n+\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714980476213,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n     public function up()\n     {\n         Schema::create('notification_logs', function (Blueprint $table) {\n             $table->id();\n+            $table->string('customer_id')->nullable();\n             $table->string('cur_sym')->nullable();\n             $table->string('cur_sym')->nullable();\n             $table->string('cur_sym')->nullable();\n             $table->string('cur_sym')->nullable();\n"
+                },
+                {
+                    "date": 1714980482333,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,14 +15,14 @@\n     {\n         Schema::create('notification_logs', function (Blueprint $table) {\n             $table->id();\n             $table->string('customer_id')->nullable();\n+            $table->string('sender')->nullable();\n             $table->string('cur_sym')->nullable();\n             $table->string('cur_sym')->nullable();\n             $table->string('cur_sym')->nullable();\n             $table->string('cur_sym')->nullable();\n             $table->string('cur_sym')->nullable();\n-            $table->string('cur_sym')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714980489548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,13 +16,13 @@\n         Schema::create('notification_logs', function (Blueprint $table) {\n             $table->id();\n             $table->string('customer_id')->nullable();\n             $table->string('sender')->nullable();\n+            $table->string('sent_from')->nullable();\n             $table->string('cur_sym')->nullable();\n             $table->string('cur_sym')->nullable();\n             $table->string('cur_sym')->nullable();\n             $table->string('cur_sym')->nullable();\n-            $table->string('cur_sym')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714980497367,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,12 +17,12 @@\n             $table->id();\n             $table->string('customer_id')->nullable();\n             $table->string('sender')->nullable();\n             $table->string('sent_from')->nullable();\n+            $table->string('sent_to')->nullable();\n             $table->string('cur_sym')->nullable();\n             $table->string('cur_sym')->nullable();\n             $table->string('cur_sym')->nullable();\n-            $table->string('cur_sym')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714980503588,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,11 +18,11 @@\n             $table->string('customer_id')->nullable();\n             $table->string('sender')->nullable();\n             $table->string('sent_from')->nullable();\n             $table->string('sent_to')->nullable();\n+            $table->string('subject')->nullable();\n             $table->string('cur_sym')->nullable();\n             $table->string('cur_sym')->nullable();\n-            $table->string('cur_sym')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714980509610,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,10 @@\n             $table->string('sender')->nullable();\n             $table->string('sent_from')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('subject')->nullable();\n+            $table->string('message')->nullable();\n             $table->string('cur_sym')->nullable();\n-            $table->string('cur_sym')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714980518122,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,10 +19,10 @@\n             $table->string('sender')->nullable();\n             $table->string('sent_from')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('subject')->nullable();\n-            $table->string('message')->nullable();\n-            $table->string('cur_sym')->nullable();\n+            $table->text('message')->nullable();\n+            $table->string('notification_type')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714980527781,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('notification_logs', function (Blueprint $table) {\n             $table->id();\n-            $table->string('customer_id')->nullable();\n+            $table->integer('customer_id')->nullable();\n             $table->string('sender')->nullable();\n             $table->string('sent_from')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('subject')->nullable();\n"
+                },
+                {
+                    "date": 1714983788864,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -21,9 +21,8 @@\n             $table->string('sent_to')->nullable();\n             $table->string('subject')->nullable();\n             $table->text('message')->nullable();\n             $table->string('notification_type')->nullable();\n-\n             $table->timestamps();\n         });\n     }\n \n"
+                }
+            ],
+            "date": 1714980444380,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('notification_logs', function (Blueprint $table) {\n            $table->id();\n            \n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('notification_logs');\n    }\n};\n"
+        }
+    ]
+}

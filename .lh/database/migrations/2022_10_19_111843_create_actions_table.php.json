@@ -1,0 +1,62 @@
+{
+    "sourceFile": "database/migrations/2022_10_19_111843_create_actions_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1714977444649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714977453824,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\r\n             $table->string('actionable_type');\r\n             $table->integer('actionable_id')->unsigned();\r\n             $table->string('action_name', 40);\r\n-            $table-\r\n+            $table->string()\r\n             $table->timestamps();\r\n         });\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1714977461739,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\r\n             $table->string('actionable_type');\r\n             $table->integer('actionable_id')->unsigned();\r\n             $table->string('action_name', 40);\r\n-            $table->string()\r\n+            $table->integer()\r\n             $table->timestamps();\r\n         });\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1714977467419,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\r\n             $table->string('actionable_type');\r\n             $table->integer('actionable_id')->unsigned();\r\n             $table->string('action_name', 40);\r\n-            $table->integer()\r\n+            $table->integer('');\r\n             $table->timestamps();\r\n         });\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1714977477961,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\r\n             $table->string('actionable_type');\r\n             $table->integer('actionable_id')->unsigned();\r\n             $table->string('action_name', 40);\r\n-            $table->integer('');\r\n+            $table->integer('admin_id',10);\r\n             $table->timestamps();\r\n         });\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1714977964346,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\r\n     {\r\n         Schema::create('actions', function (Blueprint $table) {\r\n             $table->id();\r\n-            $table->string('actionable_type');\r\n+            $table->string('actionable_type')->nullable();\r\n             $table->integer('actionable_id')->unsigned();\r\n             $table->string('action_name', 40);\r\n             $table->integer('admin_id',10);\r\n             $table->timestamps();\r\n"
+                },
+                {
+                    "date": 1714977978964,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('actions', function (Blueprint $table) {\r\n             $table->id();\r\n             $table->string('actionable_type')->nullable();\r\n             $table->integer('actionable_id')->unsigned();\r\n-            $table->string('action_name', 40);\r\n+            $table->string('action_name', 40)->nullable();\r\n             $table->integer('admin_id',10);\r\n             $table->timestamps();\r\n         });\r\n     }\r\n"
+                },
+                {
+                    "date": 1714977984705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\r\n             $table->string('actionable_type')->nullable();\r\n             $table->integer('actionable_id')->unsigned();\r\n             $table->string('action_name', 40)->nullable();\r\n-            $table->integer('admin_id',10);\r\n+            $table->integer('admin_id',10)->nullable();\r\n             $table->timestamps();\r\n         });\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1714977990467,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\r\n             $table->string('actionable_type')->nullable();\r\n             $table->integer('actionable_id')->unsigned();\r\n             $table->string('action_name', 40)->nullable();\r\n-            $table->integer('admin_id',10)->nullable();\r\n+            $table->integer('admin_id',10);\r\n             $table->timestamps();\r\n         });\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1714977996417,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\r\n             $table->string('actionable_type')->nullable();\r\n             $table->integer('actionable_id')->unsigned();\r\n             $table->string('action_name', 40)->nullable();\r\n-            $table->integer('admin_id',10);\r\n+            $table->integer('admin_id',10)->nullable();\r\n             $table->timestamps();\r\n         });\r\n     }\r\n \r\n"
+                },
+                {
+                    "date": 1714987395458,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     {\r\n         Schema::create('actions', function (Blueprint $table) {\r\n             $table->id();\r\n             $table->string('actionable_type')->nullable();\r\n-            $table->integer('actionable_id')->nu();\r\n+            $table->integer('actionable_id')->nul();\r\n             $table->string('action_name', 40)->nullable();\r\n             $table->integer('admin_id',10)->nullable();\r\n             $table->timestamps();\r\n         });\r\n"
+                },
+                {
+                    "date": 1714988311130,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     {\r\n         Schema::create('actions', function (Blueprint $table) {\r\n             $table->id();\r\n             $table->string('actionable_type')->nullable();\r\n-            $table->integer('actionable_id')->null;\r\n+            $table->integer('actionable_id')->null\r\n             $table->string('action_name', 40)->nullable();\r\n             $table->integer('admin_id',10)->nullable();\r\n             $table->timestamps();\r\n         });\r\n"
+                }
+            ],
+            "date": 1714977444649,
+            "name": "Commit-0",
+            "content": "<?php\r\n\r\nuse Illuminate\\Database\\Migrations\\Migration;\r\nuse Illuminate\\Database\\Schema\\Blueprint;\r\nuse Illuminate\\Support\\Facades\\Schema;\r\n\r\nreturn new class extends Migration\r\n{\r\n    /**\r\n     * Run the migrations.\r\n     *\r\n     * @return void\r\n     */\r\n    public function up()\r\n    {\r\n        Schema::create('actions', function (Blueprint $table) {\r\n            $table->id();\r\n            $table->string('actionable_type');\r\n            $table->integer('actionable_id')->unsigned();\r\n            $table->string('action_name', 40);\r\n            $table-\r\n            $table->timestamps();\r\n        });\r\n    }\r\n\r\n    /**\r\n     * Reverse the migrations.\r\n     *\r\n     * @return void\r\n     */\r\n    public function down()\r\n    {\r\n        Schema::dropIfExists('actions');\r\n    }\r\n};\r\n"
+        }
+    ]
+}

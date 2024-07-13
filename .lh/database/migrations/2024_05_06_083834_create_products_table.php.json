@@ -1,0 +1,30 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_083834_create_products_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1714984719623,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714984731718,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,19 @@\n     public function up()\n     {\n         Schema::create('products', function (Blueprint $table) {\n             $table->id();\n+            $table->string('name')->nullable();\n+            $table->string('image')->nullable();\n+            $table->integer('category_id')->unsigned()->nullable();\n+            $table->integer('brand_id')->unsigned()->nullable();\n+            $table->integer('unit_id')->nullable();\n+            $table->string('sku')->nullable();\n+            $table->integer('alert_quantity')->unsigned()->nullable();\n+            $table->string('note')->nullable();\n+            $table->integer('total_sale')->nullable();\n \n-            \n+\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714984787687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             $table->integer('unit_id')->nullable();\n             $table->string('sku')->nullable();\n             $table->integer('alert_quantity')->unsigned()->nullable();\n             $table->string('note')->nullable();\n-            $table->integer('total_sale')->nullable();\n+            $table->integer('total_sale')->nullable()->;\n \n \n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1714984798209,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,10 +22,9 @@\n             $table->integer('unit_id')->nullable();\n             $table->string('sku')->nullable();\n             $table->integer('alert_quantity')->unsigned()->nullable();\n             $table->string('note')->nullable();\n-            $table->integer('total_sale')->nullable()->defau\n-            ;\n+            $table->integer('total_sale')->nullable()->defau;\n \n \n             $table->timestamps();\n         });\n"
+                }
+            ],
+            "date": 1714984719623,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('products', function (Blueprint $table) {\n            $table->id();\n\n            \n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('products');\n    }\n};\n"
+        }
+    ]
+}

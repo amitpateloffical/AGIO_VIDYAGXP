@@ -1,0 +1,26 @@
+{
+    "sourceFile": "routes/web.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1714974159878,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714997513674,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,5 @@\n Route::get('/', function () {\r\n     return to_route('admin.dashboard');\r\n })->name('home');\r\n \r\n-Route::get('/admin/login', 'AdminAuthController@showLoginForm')->name('admin.login');\r\n+Route::post('/admin/login', 'AdminAuthController@showLoginForm')->name('admin.login');\r\n"
+                },
+                {
+                    "date": 1714997545874,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -27,5 +27,5 @@\n Route::get('/', function () {\r\n     return to_route('admin.dashboard');\r\n })->name('home');\r\n \r\n-Route::post('/admin/login', 'AdminAuthController@showLoginForm')->name('admin.login');\r\n+Route::get('/admin/login', 'AdminAuthController@showLoginForm')->name('admin.login');\r\n"
+                }
+            ],
+            "date": 1714974159878,
+            "name": "Commit-0",
+            "content": "<?php\r\n\r\nuse Illuminate\\Support\\Facades\\Route;\r\n\r\n\r\n\r\nRoute::get('/test', function ($lastNumber = 'S-0') {\r\n    $prefix         = 'S-';\r\n    $number         = str_replace($prefix, '', $lastNumber) + 1;\r\n    $lengthOfNumber = strlen($number);\r\n    $numberOfZeros  = 6 - $lengthOfNumber;\r\n    $totalLength    = $numberOfZeros + $lengthOfNumber;\r\n    $invoiceNumber  = str_pad($number, $totalLength, '0', STR_PAD_LEFT);\r\n    return $prefix  = 'S-' . $invoiceNumber;\r\n});\r\n\r\n\r\nRoute::get('/clear', function () {\r\n    \\Illuminate\\Support\\Facades\\Artisan::call('optimize:clear');\r\n});\r\n\r\nRoute::controller('SiteController')->group(function () {\r\n    Route::get('placeholder-image/{size}', 'placeholderImage')->name('placeholder.image');\r\n});\r\n\r\n\r\nRoute::get('/', function () {\r\n    return to_route('admin.dashboard');\r\n})->name('home');\r\n\r\nRoute::get('/admin/login', 'AdminAuthController@showLoginForm')->name('admin.login');\r\n"
+        }
+    ]
+}

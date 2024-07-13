@@ -1,0 +1,122 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_071031_create_customer_payments_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 26,
+            "patches": [
+                {
+                    "date": 1714979466888,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714979484920,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,12 @@\n     public function up()\n     {\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n+            $table->integer('customer_id')->nullable();\n             $table->integer('is_read')->nullable();\n+            $table->integer('is_read')->nullable();\n+            $table->integer('is_read')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714979495548,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,11 @@\n     {\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n             $table->integer('customer_id')->nullable();\n+            $table->integer('sale_id')->nullable();\n             $table->integer('is_read')->nullable();\n             $table->integer('is_read')->nullable();\n-            $table->integer('is_read')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714979502564,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n             $table->integer('customer_id')->nullable();\n             $table->integer('sale_id')->nullable();\n+            $table->integer('sale_return_id')->nullable();\n             $table->integer('is_read')->nullable();\n-            $table->integer('is_read')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714979510137,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\n             $table->integer('customer_id')->nullable();\n             $table->integer('sale_id')->nullable();\n             $table->integer('sale_return_id')->nullable();\n-            $table->integer('is_read')->nullable();\n+            $table->integer('amount')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714979522260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,11 @@\n             $table->integer('customer_id')->nullable();\n             $table->integer('sale_id')->nullable();\n             $table->integer('sale_return_id')->nullable();\n             $table->integer('amount')->nullable();\n+            $table->integer('amount')->nullable();\n \n+\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714979534827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,8 +18,9 @@\n             $table->integer('customer_id')->nullable();\n             $table->integer('sale_id')->nullable();\n             $table->integer('sale_return_id')->nullable();\n             $table->integer('amount')->nullable();\n+            $table->integer('trx')->nullable();\n             $table->integer('amount')->nullable();\n \n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714979545470,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,10 +18,10 @@\n             $table->integer('customer_id')->nullable();\n             $table->integer('sale_id')->nullable();\n             $table->integer('sale_return_id')->nullable();\n             $table->integer('amount')->nullable();\n-            $table->integer('trx')->nullable();\n-            $table->integer('amount')->nullable();\n+            $table->string('trx')->nullable();\n+            $table->integer('remark')->nullable();\n \n \n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1714979552064,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,9 @@\n             $table->integer('sale_id')->nullable();\n             $table->integer('sale_return_id')->nullable();\n             $table->integer('amount')->nullable();\n             $table->string('trx')->nullable();\n-            $table->integer('remark')->nullable();\n+            $table->string('remark')->nullable();\n \n \n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1714979566185,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('customer_id')->nullable();\n+            $table->integer('customer_id')unsign->nullable();\n             $table->integer('sale_id')->nullable();\n             $table->integer('sale_return_id')->nullable();\n             $table->integer('amount')->nullable();\n             $table->string('trx')->nullable();\n"
+                },
+                {
+                    "date": 1714979572101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('customer_id')unsign->nullable();\n+            $table->integer('customer_id')unsi->nullable();\n             $table->integer('sale_id')->nullable();\n             $table->integer('sale_return_id')->nullable();\n             $table->integer('amount')->nullable();\n             $table->string('trx')->nullable();\n"
+                },
+                {
+                    "date": 1714979578049,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('customer_id')unsi->nullable();\n+            $table->integer('customer_id')unsign->nullable();\n             $table->integer('sale_id')->nullable();\n             $table->integer('sale_return_id')->nullable();\n             $table->integer('amount')->nullable();\n             $table->string('trx')->nullable();\n"
+                },
+                {
+                    "date": 1714979590283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('customer_id')unsign->nullable();\n+            $table->integer('customer_id')->unsig->nullable();\n             $table->integer('sale_id')->nullable();\n             $table->integer('sale_return_id')->nullable();\n             $table->integer('amount')->nullable();\n             $table->string('trx')->nullable();\n"
+                },
+                {
+                    "date": 1714979601719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n     public function up()\n     {\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('customer_id')->unsig->nullable();\n-            $table->integer('sale_id')->nullable();\n+            $table->integer('customer_id')->unsigned()->nullable();\n+            $table->integer('sale_id')->unsigned()->nullable();\n             $table->integer('sale_return_id')->nullable();\n             $table->integer('amount')->nullable();\n             $table->string('trx')->nullable();\n             $table->string('remark')->nullable();\n"
+                },
+                {
+                    "date": 1714979609184,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,11 @@\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n             $table->integer('customer_id')->unsigned()->nullable();\n             $table->integer('sale_id')->unsigned()->nullable();\n-            $table->integer('sale_return_id')->nullable();\n-            $table->integer('amount')->nullable();\n-            $table->string('trx')->nullable();\n+            $table->integer('sale_return_id')->unsigned()->nullable();\n+            $table->integer('amount')->unsigned()->nullable();\n+            $table->string('trx')->unsigned()->nullable();\n             $table->string('remark')->nullable();\n \n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714979618441,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n             $table->id();\n             $table->integer('customer_id')->unsigned()->nullable();\n             $table->integer('sale_id')->unsigned()->nullable();\n             $table->integer('sale_return_id')->unsigned()->nullable();\n-            $table->integer('amount')->unsigned()->nullable();\n-            $table->string('trx')->unsigned()->nullable();\n+            $table->desi('amount')->unsigned()->nullable();\n+            $table->string('trx')->nullable();\n             $table->string('remark')->nullable();\n \n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714979624790,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\n             $table->integer('customer_id')->unsigned()->nullable();\n             $table->integer('sale_id')->unsigned()->nullable();\n             $table->integer('sale_return_id')->unsigned()->nullable();\n-            $table->desi('amount')->unsigned()->nullable();\n+            $table->decimal('amount')->unsigned()->nullable();\n             $table->string('trx')->nullable();\n             $table->string('remark')->nullable();\n \n \n"
+                },
+                {
+                    "date": 1714987544942,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,12 @@\n     public function up()\n     {\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('customer_id')->unsigned()->nullable();\n-            $table->integer('sale_id')->unsigned()->nullable();\n-            $table->integer('sale_return_id')->unsigned()->nullable();\n-            $table->decimal('amount')->unsigned()->nullable();\n+            $table->integer('customer_id')->nullable();\n+            $table->integer('sale_id')->unsigne()->nullable();\n+            $table->integer('sale_return_id')->unsgned()->nullable();\n+            $table->decimal('amount')->unsgned()->nullable();\n             $table->string('trx')->nullable();\n             $table->string('remark')->nullable();\n \n \n"
+                },
+                {
+                    "date": 1714987593907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,19 +14,17 @@\n     public function up()\n     {\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('customer_id')->nullable();\n-            $table->integer('sale_id')->unsigne()->nullable();\n-            $table->integer('sale_return_id')->unsgned()->nullable();\n-            $table->decimal('amount')->unsgned()->nullable();\n+            $table->integer('customer_id')->u->nullable();\n+            $table->integer('sale_id')->u->nullable();\n+            $table->integer('sale_return_id')->u->nullable();\n+            $table->decimal('amount')->)->nullable();\n             $table->string('trx')->nullable();\n             $table->string('remark')->nullable();\n \n \n             $table->timestamps();\n-        });\n-    }\n \n     /**\n      * Reverse the migrations.\n      *\n"
+                },
+                {
+                    "date": 1714987601988,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,17 +14,17 @@\n     public function up()\n     {\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('customer_id')->u->nullable();\n-            $table->integer('sale_id')->u->nullable();\n-            $table->integer('sale_return_id')->u->nullable();\n-            $table->decimal('amount')->)->nullable();\n+            $table->integer('customer_id')->nullable();\n+            $table->integer('sale_id')-->nullable();\n+            $table->integer('sale_return_id')-->nullable();\n+            $table->decimal('amount'))->nullable();\n             $table->string('trx')->nullable();\n             $table->string('remark')->nullable();\n \n \n-            $table->timestamps();\n+            $table->timestamps(\n \n     /**\n      * Reverse the migrations.\n      *\n"
+                },
+                {
+                    "date": 1714987608408,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,11 @@\n     {\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n             $table->integer('customer_id')->nullable();\n-            $table->integer('sale_id')-->nullable();\n+            $table->integer('sale_id')->nullable();\n             $table->integer('sale_return_id')-->nullable();\n-            $table->decimal('amount'))->nullable();\n+            $table->decimal('amount')->nullable();\n             $table->string('trx')->nullable();\n             $table->string('remark')->nullable();\n \n \n"
+                },
+                {
+                    "date": 1714987614283,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -22,9 +22,9 @@\n             $table->string('trx')->nullable();\n             $table->string('remark')->nullable();\n \n \n-            $table->timestamps(\n+            $table->timestamps()\n \n     /**\n      * Reverse the migrations.\n      *\n"
+                },
+                {
+                    "date": 1714987624362,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,17 +14,19 @@\n     public function up()\n     {\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('customer_id')->nullable();\n-            $table->integer('sale_id')->nullable();\n-            $table->integer('sale_return_id')-->nullable();\n-            $table->decimal('amount')->nullable();\n+            $table->integer('customer_id')->unsigned()->nullable();\n+            $table->integer('sale_id')->unsigned()->nullable();\n+            $table->integer('sale_return_id')->unsigned()->nullable();\n+            $table->de('amount')->unsigned()->nullable();\n             $table->string('trx')->nullable();\n             $table->string('remark')->nullable();\n \n \n-            $table->timestamps()\n+            $table->timestamps();\n+        });\n+    }\n \n     /**\n      * Reverse the migrations.\n      *\n"
+                },
+                {
+                    "date": 1714987632394,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('customer_id')->unsigned()->nullable();\n+            $table->integer('customer_id')->nullable();\n             $table->integer('sale_id')->unsigned()->nullable();\n             $table->integer('sale_return_id')->unsigned()->nullable();\n             $table->de('amount')->unsigned()->nullable();\n             $table->string('trx')->nullable();\n"
+                },
+                {
+                    "date": 1714987644719,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,10 +15,10 @@\n     {\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n             $table->integer('customer_id')->nullable();\n-            $table->integer('sale_id')->unsigned()->nullable();\n-            $table->integer('sale_return_id')->unsigned()->nullable();\n+            $table->integer('sale_id')->nullable();\n+            $table->integer('sale_return_id')->nullable();\n             $table->de('amount')->unsigned()->nullable();\n             $table->string('trx')->nullable();\n             $table->string('remark')->nullable();\n \n"
+                },
+                {
+                    "date": 1714994257108,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\n             $table->integer('customer_id')->nullable();\n             $table->integer('sale_id')->nullable();\n             $table->integer('sale_return_id')->nullable();\n-            $table->de('amount')->unsigned()->nullable();\n+            $table->('amount')->nullable();\n             $table->string('trx')->nullable();\n             $table->string('remark')->nullable();\n \n \n"
+                },
+                {
+                    "date": 1714994455987,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n         Schema::create('customer_payments', function (Blueprint $table) {\n             $table->id();\n             $table->integer('customer_id')->nullable();\n             $table->integer('sale_id')->nullable();\n-            $table->integer('sale_return_id')->nullable();\n-            $table->('amount')->nullable();\n+            $table->integer('sale_return_id')->nullable(); \n+            $table->date('amount')->nullable();\n             $table->string('trx')->nullable();\n             $table->string('remark')->nullable();\n \n \n"
+                }
+            ],
+            "date": 1714979466888,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('customer_payments', function (Blueprint $table) {\n            $table->id();\n            $table->integer('is_read')->nullable();\n\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('customer_payments');\n    }\n};\n"
+        }
+    ]
+}

@@ -1,0 +1,38 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_084136_create_purchases_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 5,
+            "patches": [
+                {
+                    "date": 1714984915260,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714985027649,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,20 @@\n     public function up()\n     {\n         Schema::create('purchases', function (Blueprint $table) {\n             $table->id();\n-            \n+            $table->integer('supplier_id')->unsigned()->nullable();\n+            $table->string('invoice_no')->nullable();\n+            $table->integer('warehouse_id')->unsigned()->nullable();\n+            $table->date('purchase_date')->nullable();\n+            $table->decimal('total_price')->nullable();\n+            $table->decimal('discount_amount')->nullable();\n+            $table->decimal('payable_amount')->nullable();\n+            $table->decimal('paid_amount')->nullable();\n+            $table->decimal('due_amount')->nullable();\n+            $table->text('note')->nullable();\n+            $table->longtext('return_status')->nullable();\n+\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714985175702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             $table->decimal('payable_amount')->nullable();\n             $table->decimal('paid_amount')->nullable();\n             $table->decimal('due_amount')->nullable();\n             $table->text('note')->nullable();\n-            $table->longtext('return_status')->nullable();\n+            $table->longtext('return_status')->nullable()->defau;\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714985181189,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             $table->decimal('payable_amount')->nullable();\n             $table->decimal('paid_amount')->nullable();\n             $table->decimal('due_amount')->nullable();\n             $table->text('note')->nullable();\n-            $table->longtext('return_status')->nullable()->defau;\n+            $table->longtext('return_status')->nullable()->default(0);\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714985206815,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,8 @@\n             $table->decimal('paid_amount')->nullable();\n             $table->decimal('due_amount')->nullable();\n             $table->text('note')->nullable();\n             $table->longtext('return_status')->nullable()->default(0);\n-\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714994833234,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             $table->decimal('payable_amount')->nullable();\n             $table->decimal('paid_amount')->nullable();\n             $table->decimal('due_amount')->nullable();\n             $table->text('note')->nullable();\n-            $table->longtext('return_status')->nullable()->default(0);\n+            $table->boolean('return_status')->default(0); // Changed type to boolean\n             $table->timestamps();\n         });\n     }\n \n"
+                }
+            ],
+            "date": 1714984915260,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('purchases', function (Blueprint $table) {\n            $table->id();\n            \n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('purchases');\n    }\n};\n"
+        }
+    ]
+}

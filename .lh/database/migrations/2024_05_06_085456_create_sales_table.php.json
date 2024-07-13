@@ -1,0 +1,42 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_085456_create_sales_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 6,
+            "patches": [
+                {
+                    "date": 1714985729752,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714985744532,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,19 +15,19 @@\n     {\n         Schema::create('sales', function (Blueprint $table) {\n             $table->id();\n             \n-$table->integer('customer_id',10)->unsigned();\n-$table->string('invoice_no',255)->nullable();\n-$table->integer('warehouse_id',10)->unsigned();\n-$table->date('sale_date')->nullable();\n-$table->decimal('total_price',28,8)->nullable(); \n-$table->decimal('discount_amount',28,8)->nullable();\n-$table->decimal('receivable_amount',28,8)->nullable();\n-$table->decimal('received_amount',28,8)->nullable();\n-$table->decimal('due_amount',28,8)->nullable();\n-$table->string('note')->nullable();\n-$table->integer('return_status')->nullable();\n+            $table->integer('customer_id',10)->unsigned();\n+            $table->string('invoice_no',255)->nullable();\n+            $table->integer('warehouse_id',10)->unsigned();\n+            $table->date('sale_date')->nullable();\n+            $table->decimal('total_price',28,8)->nullable(); \n+            $table->decimal('discount_amount',28,8)->nullable();\n+            $table->decimal('receivable_amount',28,8)->nullable();\n+            $table->decimal('received_amount',28,8)->nullable();\n+            $table->decimal('due_amount',28,8)->nullable();\n+            $table->string('note')->nullable();\n+            $table->integer('return_status')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714985803352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -24,9 +24,9 @@\n             $table->decimal('discount_amount',28,8)->nullable();\n             $table->decimal('receivable_amount',28,8)->nullable();\n             $table->decimal('received_amount',28,8)->nullable();\n             $table->decimal('due_amount',28,8)->nullable();\n-            $table->string('note')->nullable();\n+            $table->text('note')->nullable();\n             $table->integer('return_status')->nullable();\n \n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1714985854687,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -25,9 +25,9 @@\n             $table->decimal('receivable_amount',28,8)->nullable();\n             $table->decimal('received_amount',28,8)->nullable();\n             $table->decimal('due_amount',28,8)->nullable();\n             $table->text('note')->nullable();\n-            $table->integer('return_status')->nullable();\n+            $table->integer('return_status')->nullable()->default();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714993472802,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,19 +15,19 @@\n     {\n         Schema::create('sales', function (Blueprint $table) {\n             $table->id();\n             \n-            $table->integer('customer_id',10)->unsigned();\n+            $table->integer('customer_id')->unsigned();\n             $table->string('invoice_no',255)->nullable();\n-            $table->integer('warehouse_id',10)->unsigned();\n+            $table->integer('warehouse_id')->unsigned();\n             $table->date('sale_date')->nullable();\n             $table->decimal('total_price',28,8)->nullable(); \n             $table->decimal('discount_amount',28,8)->nullable();\n             $table->decimal('receivable_amount',28,8)->nullable();\n             $table->decimal('received_amount',28,8)->nullable();\n             $table->decimal('due_amount',28,8)->nullable();\n             $table->text('note')->nullable();\n-            $table->integer('return_status')->nullable()->default();\n+            $table->integer('return_status')->nullable()->default(0);\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714993479637,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('sales', function (Blueprint $table) {\n             $table->id();\n             \n             $table->integer('customer_id')->unsigned();\n-            $table->string('invoice_no',255)->nullable();\n+            $table->string('invoice_no')->nullable();\n             $table->integer('warehouse_id')->unsigned();\n             $table->date('sale_date')->nullable();\n             $table->decimal('total_price',28,8)->nullable(); \n             $table->decimal('discount_amount',28,8)->nullable();\n"
+                },
+                {
+                    "date": 1714993489897,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,13 +19,13 @@\n             $table->integer('customer_id')->unsigned();\n             $table->string('invoice_no')->nullable();\n             $table->integer('warehouse_id')->unsigned();\n             $table->date('sale_date')->nullable();\n-            $table->decimal('total_price',28,8)->nullable(); \n-            $table->decimal('discount_amount',28,8)->nullable();\n-            $table->decimal('receivable_amount',28,8)->nullable();\n-            $table->decimal('received_amount',28,8)->nullable();\n-            $table->decimal('due_amount',28,8)->nullable();\n+            $table->decimal('total_price')->nullable(); \n+            $table->decimal('discount_amount')->nullable();\n+            $table->decimal('receivable_amount')->nullable();\n+            $table->decimal('received_amount')->nullable();\n+            $table->decimal('due_amount')->nullable();\n             $table->text('note')->nullable();\n             $table->integer('return_status')->nullable()->default(0);\n \n             $table->timestamps();\n"
+                }
+            ],
+            "date": 1714985729752,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('sales', function (Blueprint $table) {\n            $table->id();\n            \n$table->integer('customer_id',10)->unsigned();\n$table->string('invoice_no',255)->nullable();\n$table->integer('warehouse_id',10)->unsigned();\n$table->date('sale_date')->nullable();\n$table->decimal('total_price',28,8)->nullable(); \n$table->decimal('discount_amount',28,8)->nullable();\n$table->decimal('receivable_amount',28,8)->nullable();\n$table->decimal('received_amount',28,8)->nullable();\n$table->decimal('due_amount',28,8)->nullable();\n$table->string('note')->nullable();\n$table->integer('return_status')->nullable();\n\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('sales');\n    }\n};\n"
+        }
+    ]
+}

@@ -1,0 +1,18 @@
+{
+    "sourceFile": "database/seeders/DatabaseSeeder.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1714999546240,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1714999546240,
+            "name": "Commit-0",
+            "content": "<?php\r\n\r\nnamespace Database\\Seeders;\r\n\r\nuse Illuminate\\Database\\Console\\Seeds\\WithoutModelEvents;\r\nuse Illuminate\\Database\\Seeder;\r\n\r\nclass DatabaseSeeder extends Seeder\r\n{\r\n    /**\r\n     * Seed the application's database.\r\n     *\r\n     * @return void\r\n     */\r\n    public function run()\r\n    {\r\n        $this->call([\r\n            UserSeeder::class,\r\n            RoleSeeder::class,\r\n            PermissionSeeder::class,\r\n            GeneralSettingSeeder::class\r\n        ]);\r\n    }\r\n}\r\n"
+        }
+    ]
+}

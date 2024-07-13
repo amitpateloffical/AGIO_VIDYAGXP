@@ -1,0 +1,22 @@
+{
+    "sourceFile": "public/index.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1714975048055,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714975862632,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -32,8 +32,9 @@\n */\r\n \r\n // require __DIR__.'./../vendor/autoload.php';\r\n \r\n+\r\n /*\r\n |--------------------------------------------------------------------------\r\n | Run The Application\r\n |--------------------------------------------------------------------------\r\n"
+                }
+            ],
+            "date": 1714975048055,
+            "name": "Commit-0",
+            "content": "<?php\r\n\r\nuse Illuminate\\Contracts\\Http\\Kernel;\r\nuse Illuminate\\Http\\Request;\r\n\r\ndefine('LARAVEL_START', microtime(true));\r\n\r\n/*\r\n|--------------------------------------------------------------------------\r\n| Check If The Application Is Under Maintenance\r\n|--------------------------------------------------------------------------\r\n|\r\n| If the application is in maintenance / demo mode via the \"down\" command\r\n| we will load this file so that any pre-rendered content can be shown\r\n| instead of starting the framework, which could cause an exception.\r\n|\r\n*/\r\n\r\nif (file_exists($maintenance = __DIR__.'./../storage/framework/maintenance.php')) {\r\n    require $maintenance;\r\n}\r\n\r\n/*\r\n|--------------------------------------------------------------------------\r\n| Register The Auto Loader\r\n|--------------------------------------------------------------------------\r\n|\r\n| Composer provides a convenient, automatically generated class loader for\r\n| this application. We just need to utilize it! We'll simply require it\r\n| into the script here so we don't need to manually load our classes.\r\n|\r\n*/\r\n\r\nrequire __DIR__.'./../vendor/autoload.php';\r\n\r\n/*\r\n|--------------------------------------------------------------------------\r\n| Run The Application\r\n|--------------------------------------------------------------------------\r\n|\r\n| Once we have the application, we can handle the incoming request using\r\n| the application's HTTP kernel. Then, we will send the response back\r\n| to this client's browser, allowing them to enjoy our application.\r\n|\r\n*/\r\n\r\n$app = require_once __DIR__.'./../bootstrap/app.php';\r\n\r\n$kernel = $app->make(Kernel::class);\r\n\r\n$response = $kernel->handle(\r\n    $request = Request::capture()\r\n)->send();\r\n\r\n$kernel->terminate($request, $response);\r\n"
+        }
+    ]
+}

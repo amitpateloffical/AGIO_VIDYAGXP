@@ -1,0 +1,26 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_070037_create_admin_notifications_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 2,
+            "patches": [
+                {
+                    "date": 1714978851520,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714978863935,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,11 @@\n     public function up()\n     {\n         Schema::create('admin_notifications', function (Blueprint $table) {\n             $table->id();\n+            $table->integer('user_id')->nullable()->default(1);\n \n-            \n+\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714978885616,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('admin_notifications', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('user_id')->->nullable()->default(1);\n+            $table->integer('user_id')->un->nullable()->default(1);\n \n \n             $table->timestamps();\n         });\n"
+                }
+            ],
+            "date": 1714978851520,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('admin_notifications', function (Blueprint $table) {\n            $table->id();\n\n            \n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('admin_notifications');\n    }\n};\n"
+        }
+    ]
+}

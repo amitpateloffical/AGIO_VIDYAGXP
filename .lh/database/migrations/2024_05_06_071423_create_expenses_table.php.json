@@ -1,0 +1,70 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_071423_create_expenses_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 13,
+            "patches": [
+                {
+                    "date": 1714979681516,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714979688211,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,12 @@\n     public function up()\n     {\n         Schema::create('expenses', function (Blueprint $table) {\n             $table->id();\n-            \n+            $table->string('trx')->nullable();\n+            $table->string('trx')->nullable();\n+            $table->string('trx')->nullable();\n+\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714979699633,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,8 +14,9 @@\n     public function up()\n     {\n         Schema::create('expenses', function (Blueprint $table) {\n             $table->id();\n+            $table->string('expense_type_id')->nullable();\n             $table->string('trx')->nullable();\n             $table->string('trx')->nullable();\n             $table->string('trx')->nullable();\n \n"
+                },
+                {
+                    "date": 1714979704967,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,11 @@\n     {\n         Schema::create('expenses', function (Blueprint $table) {\n             $table->id();\n             $table->string('expense_type_id')->nullable();\n+            $table->string('date_of_expense')->nullable();\n             $table->string('trx')->nullable();\n             $table->string('trx')->nullable();\n-            $table->string('trx')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714979710982,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n         Schema::create('expenses', function (Blueprint $table) {\n             $table->id();\n             $table->string('expense_type_id')->nullable();\n             $table->string('date_of_expense')->nullable();\n+            $table->string('amount')->nullable();\n             $table->string('trx')->nullable();\n-            $table->string('trx')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714979717786,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\n             $table->string('expense_type_id')->nullable();\n             $table->string('date_of_expense')->nullable();\n             $table->string('amount')->nullable();\n-            $table->string('trx')->nullable();\n+            $table->string('note')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714979727062,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('expenses', function (Blueprint $table) {\n             $table->id();\n-            $table->string('expense_type_id')->nullable();\n+            $table->in('expense_type_id')->nullable();\n             $table->string('date_of_expense')->nullable();\n             $table->string('amount')->nullable();\n             $table->string('note')->nullable();\n \n"
+                },
+                {
+                    "date": 1714979733789,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('expenses', function (Blueprint $table) {\n             $table->id();\n-            $table->in('expense_type_id')->nullable();\n+            $table->ine('expense_type_id')->nullable();\n             $table->string('date_of_expense')->nullable();\n             $table->string('amount')->nullable();\n             $table->string('note')->nullable();\n \n"
+                },
+                {
+                    "date": 1714979739125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('expenses', function (Blueprint $table) {\n             $table->id();\n-            $table->ine('expense_type_id')->nullable();\n+            $table->intege('expense_type_id')->nullable();\n             $table->string('date_of_expense')->nullable();\n             $table->string('amount')->nullable();\n             $table->string('note')->nullable();\n \n"
+                },
+                {
+                    "date": 1714979745840,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('expenses', function (Blueprint $table) {\n             $table->id();\n-            $table->intege('expense_type_id')->nullable();\n+            $table->integer('expense_type_id')->nullable();\n             $table->string('date_of_expense')->nullable();\n             $table->string('amount')->nullable();\n             $table->string('note')->nullable();\n \n"
+                },
+                {
+                    "date": 1714979753004,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('expenses', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('expense_type_id')->nullable();\n+            $table->integer('expense_type_id')->unsig->nullable();\n             $table->string('date_of_expense')->nullable();\n             $table->string('amount')->nullable();\n             $table->string('note')->nullable();\n \n"
+                },
+                {
+                    "date": 1714979770416,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n     public function up()\n     {\n         Schema::create('expenses', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('expense_type_id')->unsig->nullable();\n-            $table->string('date_of_expense')->nullable();\n+            $table->integer('expense_type_id')->unsigned()->nullable();\n+            $table->date('date_of_expense')->nullable();\n             $table->string('amount')->nullable();\n             $table->string('note')->nullable();\n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714979777313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('expenses', function (Blueprint $table) {\n             $table->id();\n             $table->integer('expense_type_id')->unsigned()->nullable();\n             $table->date('date_of_expense')->nullable();\n-            $table->string('amount')->nullable();\n+            $table->double('amount')->nullable();\n             $table->string('note')->nullable();\n \n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1714987658515,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('expenses', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('expense_type_id')->unsigned()->nullable();\n+            $table->integer('expense_type_id')->nullable();\n             $table->date('date_of_expense')->nullable();\n             $table->double('amount')->nullable();\n             $table->string('note')->nullable();\n \n"
+                }
+            ],
+            "date": 1714979681516,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('expenses', function (Blueprint $table) {\n            $table->id();\n            \n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('expenses');\n    }\n};\n"
+        }
+    ]
+}

@@ -1,0 +1,30 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_091553_create_transfer_details_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 3,
+            "patches": [
+                {
+                    "date": 1714986961129,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714986978070,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,12 @@\n     public function up()\n     {\n         Schema::create('transfer_details', function (Blueprint $table) {\n             $table->id();\n-            \n+            $table->integer('transfer_id',10)->unsigned();\n+            $table->integer('product_id',10)->unsigned();\n+            $table->integer('quantity', 10)->unsigned()->nullable()->default(0);\n+\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714987003389,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n     public function up()\n     {\n         Schema::create('transfer_details', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('transfer_id',10)->unsigned();\n-            $table->integer('product_id',10)->unsigned();\n+            $table->integer('transfer_id',10)->unsigned()nullable;\n+            $table->integer('product_id',10)->unsigned()nullable;\n             $table->integer('quantity', 10)->unsigned()->nullable()->default(0);\n \n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1714987053823,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('transfer_details', function (Blueprint $table) {\n             $table->id();\n             $table->integer('transfer_id',10)->unsigned()->nullable();\n             $table->integer('product_id',10)->unsigned()->nullable();\n-            $table->integer('quantity', 10)->unsigned()->nullable()-;\n+            $table->integer('quantity', 10)->unsigned()->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                }
+            ],
+            "date": 1714986961129,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('transfer_details', function (Blueprint $table) {\n            $table->id();\n            \n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('transfer_details');\n    }\n};\n"
+        }
+    ]
+}

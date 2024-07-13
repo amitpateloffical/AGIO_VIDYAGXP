@@ -1,0 +1,62 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_082639_create_notification_templates_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1714984039591,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714984105733,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,10 @@\n     public function up()\n     {\n         Schema::create('notification_templates', function (Blueprint $table) {\n             $table->id();\n-            \n+            $table->string('sent_to')->nullable();\n+\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714984132981,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,11 @@\n     {\n         Schema::create('notification_templates', function (Blueprint $table) {\n             $table->id();\n             $table->string('sent_to')->nullable();\n+            $table->string('sent_to')->nullable();\n+            $table->string('sent_to')->nullable();\n+            $table->string('sent_to')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714984147056,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,16 @@\n     public function up()\n     {\n         Schema::create('notification_templates', function (Blueprint $table) {\n             $table->id();\n+            $table->string('act')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n+            $table->string('sent_to')->nullable();\n+            $table->string('sent_to')->nullable();\n+            $table->string('sent_to')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714984158729,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,15 +15,15 @@\n     {\n         Schema::create('notification_templates', function (Blueprint $table) {\n             $table->id();\n             $table->string('act')->nullable();\n+            $table->string('name')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n-            $table->string('sent_to')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714984166531,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,14 +16,14 @@\n         Schema::create('notification_templates', function (Blueprint $table) {\n             $table->id();\n             $table->string('act')->nullable();\n             $table->string('name')->nullable();\n+            $table->string('subj')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n-            $table->string('sent_to')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714984173804,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,13 +17,13 @@\n             $table->id();\n             $table->string('act')->nullable();\n             $table->string('name')->nullable();\n             $table->string('subj')->nullable();\n+            $table->string('email_body')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n-            $table->string('sent_to')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714984184223,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,13 +17,13 @@\n             $table->id();\n             $table->string('act')->nullable();\n             $table->string('name')->nullable();\n             $table->string('subj')->nullable();\n-            $table->string('email_body')->nullable();\n+            $table->text('email_body')->nullable();\n+            $table->string('sms_body')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n-            $table->string('sent_to')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714984193391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             $table->string('act')->nullable();\n             $table->string('name')->nullable();\n             $table->string('subj')->nullable();\n             $table->text('email_body')->nullable();\n-            $table->string('sms_body')->nullable();\n+            $table->text('sms_body')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n \n"
+                },
+                {
+                    "date": 1714984233676,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,11 @@\n             $table->string('name')->nullable();\n             $table->string('subj')->nullable();\n             $table->text('email_body')->nullable();\n             $table->text('sms_body')->nullable();\n+            $table->string('shortcodes')->nullable();\n             $table->string('sent_to')->nullable();\n             $table->string('sent_to')->nullable();\n-            $table->string('sent_to')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714984248334,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,11 +19,11 @@\n             $table->string('name')->nullable();\n             $table->string('subj')->nullable();\n             $table->text('email_body')->nullable();\n             $table->text('sms_body')->nullable();\n-            $table->string('shortcodes')->nullable();\n+            $table->text('shortcodes')->nullable();\n+            $table->string('email_status')->nullable();\n             $table->string('sent_to')->nullable();\n-            $table->string('sent_to')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714984254877,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,9 +20,9 @@\n             $table->string('subj')->nullable();\n             $table->text('email_body')->nullable();\n             $table->text('sms_body')->nullable();\n             $table->text('shortcodes')->nullable();\n-            $table->intege('email_status')->nullable();\n+            $table->integer('email_status')->nullable();\n             $table->string('sent_to')->nullable();\n \n             $table->timestamps();\n         });\n"
+                }
+            ],
+            "date": 1714984039591,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('notification_templates', function (Blueprint $table) {\n            $table->id();\n            \n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('notification_templates');\n    }\n};\n"
+        }
+    ]
+}

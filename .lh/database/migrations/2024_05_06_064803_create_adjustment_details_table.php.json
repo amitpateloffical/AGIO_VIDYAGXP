@@ -1,0 +1,62 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_064803_create_adjustment_details_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1714978118007,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714978141119,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,11 +14,11 @@\n     public function up()\n     {\n         Schema::create('adjustment_details', function (Blueprint $table) {\n             $table->id();\n+            $table->int('note')->nullable();\n \n \n-            \n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714978147147,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('adjustment_details', function (Blueprint $table) {\n             $table->id();\n-            $table->int('note')->nullable();\n+            $table->integer('note')->nullable();\n \n \n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1714978153491,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,9 @@\n     public function up()\n     {\n         Schema::create('adjustment_details', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('note')->nullable();\n+            $table->integer('adjustment_details')->nullable();\n \n \n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1714978203518,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,10 @@\n     public function up()\n     {\n         Schema::create('adjustment_details', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('adjustment_details')->nullable();\n+            $table->integer('adjustment_id')->nullable();\n+            \n \n \n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1714978220968,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,12 @@\n     {\n         Schema::create('adjustment_details', function (Blueprint $table) {\n             $table->id();\n             $table->integer('adjustment_id')->nullable();\n-            \n+            $table->integer('adjustment_id')->nullable();\n \n \n+\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714978255952,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,10 +14,10 @@\n     public function up()\n     {\n         Schema::create('adjustment_details', function (Blueprint $table) {\n             $table->id();\n+            $table->integer('adjustment_id')->unsigned()->nullable();\n             $table->integer('adjustment_id')->nullable();\n-            $table->integer('adjustment_id')->nullable();\n \n \n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714978266611,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     {\n         Schema::create('adjustment_details', function (Blueprint $table) {\n             $table->id();\n             $table->integer('adjustment_id')->unsigned()->nullable();\n-            $table->integer('adjustment_id')->nullable();\n+            $table->integer('adjustment_id')->unsigned()->nullable();\n \n \n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714978278238,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,11 +16,15 @@\n         Schema::create('adjustment_details', function (Blueprint $table) {\n             $table->id();\n             $table->integer('adjustment_id')->unsigned()->nullable();\n             $table->integer('adjustment_id')->unsigned()->nullable();\n+            $table->integer('adjustment_id')->unsigned()->nullable();\n \n+            $table->integer('adjustment_id')->unsigned()->nullable();\n \n \n+\n+\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714978326060,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,16 +15,14 @@\n     {\n         Schema::create('adjustment_details', function (Blueprint $table) {\n             $table->id();\n             $table->integer('adjustment_id')->unsigned()->nullable();\n+            $table->integer('product')->unsigned()->nullable();\n             $table->integer('adjustment_id')->unsigned()->nullable();\n             $table->integer('adjustment_id')->unsigned()->nullable();\n \n-            $table->integer('adjustment_id')->unsigned()->nullable();\n \n \n-\n-\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714978335972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,11 +15,11 @@\n     {\n         Schema::create('adjustment_details', function (Blueprint $table) {\n             $table->id();\n             $table->integer('adjustment_id')->unsigned()->nullable();\n-            $table->integer('product')->unsigned()->nullable();\n+            $table->integer('product_id')->unsigned()->nullable();\n+            $table->integer('')->unsigned()->nullable();\n             $table->integer('adjustment_id')->unsigned()->nullable();\n-            $table->integer('adjustment_id')->unsigned()->nullable();\n \n \n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714978342630,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('adjustment_details', function (Blueprint $table) {\n             $table->id();\n             $table->integer('adjustment_id')->unsigned()->nullable();\n             $table->integer('product_id')->unsigned()->nullable();\n-            $table->integer('quan')->unsigned()->nullable();\n+            $table->integer('quanti')->unsigned()->nullable();\n             $table->integer('adjustment_id')->unsigned()->nullable();\n \n \n \n"
+                }
+            ],
+            "date": 1714978118007,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('adjustment_details', function (Blueprint $table) {\n            $table->id();\n\n\n            \n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('adjustment_details');\n    }\n};\n"
+        }
+    ]
+}

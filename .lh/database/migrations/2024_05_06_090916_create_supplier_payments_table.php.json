@@ -1,0 +1,62 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_090916_create_supplier_payments_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 11,
+            "patches": [
+                {
+                    "date": 1714986571730,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714986594444,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,16 @@\n     {\n         Schema::create('supplier_payments', function (Blueprint $table) {\n             $table->id();\n             \n+\t$table->integer('supplier_id',10)->unsigned();\n+    $table->integer('purchase_id',10)->unsigned();\n+    $table->integer('purchase_return_id', 10)->unsigned();\n+$table->Decimal('amount',28,2)->unsigned();\n+$table->string('note',255)->nullable();\n+$table->string('trx',40)->nullable();\n+$table->string('remark',255)->nullable();\n+\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714986601754,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,12 +18,12 @@\n             \n \t$table->integer('supplier_id',10)->unsigned();\n     $table->integer('purchase_id',10)->unsigned();\n     $table->integer('purchase_return_id', 10)->unsigned();\n-$table->Decimal('amount',28,2)->unsigned();\n-$table->string('note',255)->nullable();\n-$table->string('trx',40)->nullable();\n-$table->string('remark',255)->nullable();\n+    $table->Decimal('amount',28,2)->unsigned();\n+    $table->string('note',255)->nullable();\n+    $table->string('trx',40)->nullable();\n+    $table->string('remark',255)->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714986663570,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -19,9 +19,8 @@\n \t$table->integer('supplier_id',10)->unsigned();\n     $table->integer('purchase_id',10)->unsigned();\n     $table->integer('purchase_return_id', 10)->unsigned();\n     $table->Decimal('amount',28,2)->unsigned();\n-    $table->string('note',255)->nullable();\n     $table->string('trx',40)->nullable();\n     $table->string('remark',255)->nullable();\n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714986683814,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             \n \t$table->integer('supplier_id',10)->unsigned();\n     $table->integer('purchase_id',10)->unsigned();\n     $table->integer('purchase_return_id', 10)->unsigned();\n-    $table->Decimal('amount',28,2)->unsigned();\n+    $table->string('amount',28,2)->unsigned();\n     $table->string('trx',40)->nullable();\n     $table->string('remark',255)->nullable();\n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714986696093,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             \n \t$table->integer('supplier_id',10)->unsigned();\n     $table->integer('purchase_id',10)->unsigned();\n     $table->integer('purchase_return_id', 10)->unsigned();\n-    $table->string('amount',28,2)->unsigned();\n+    $table->Decimal('amount',28,2)->unsigned();\n     $table->string('trx',40)->nullable();\n     $table->string('remark',255)->nullable();\n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714986708614,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             \n \t$table->integer('supplier_id',10)->unsigned();\n     $table->integer('purchase_id',10)->unsigned();\n     $table->integer('purchase_return_id', 10)->unsigned();\n-    $table->Decimal('amount',28,2)->unsigned();\n+    $table->Decimal('amount',28,2)->unsigned()->de;\n     $table->string('trx',40)->nullable();\n     $table->string('remark',255)->nullable();\n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714986716295,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             \n \t$table->integer('supplier_id',10)->unsigned();\n     $table->integer('purchase_id',10)->unsigned();\n     $table->integer('purchase_return_id', 10)->unsigned();\n-    $table->Decimal('amount',28,2)->unsigned()->de;\n+    $table->Decimal('amount',28,2)->unsigned()->default(\"\");\n     $table->string('trx',40)->nullable();\n     $table->string('remark',255)->nullable();\n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714986742086,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,12 @@\n     {\n         Schema::create('supplier_payments', function (Blueprint $table) {\n             $table->id();\n             \n-\t$table->integer('supplier_id',10)->unsigned();\n-    $table->integer('purchase_id',10)->unsigned();\n-    $table->integer('purchase_return_id', 10)->unsigned();\n-    $table->Decimal('amount',28,2)->unsigned()->default(\"\");\n+\t$table->integer('supplier_id',10)->unsigned()nullable;\n+    $table->integer('purchase_id',10)->unsigned()nullable;\n+    $table->integer('purchase_return_id', 10)->unsigned()nullable;\n+    $table->Decimal('amount',28,2)->unsigned()->default(\"0.00\")nullable;\n     $table->string('trx',40)->nullable();\n     $table->string('remark',255)->nullable();\n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714986747653,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,12 @@\n     {\n         Schema::create('supplier_payments', function (Blueprint $table) {\n             $table->id();\n             \n-\t$table->integer('supplier_id',10)->unsigned()nullable;\n-    $table->integer('purchase_id',10)->unsigned()nullable;\n-    $table->integer('purchase_return_id', 10)->unsigned()nullable;\n-    $table->Decimal('amount',28,2)->unsigned()->default(\"0.00\")nullable;\n+\t$table->integer('supplier_id',10)->unsigned()->nullable;\n+    $table->integer('purchase_id',10)->unsigned()->nullable;\n+    $table->integer('purchase_return_id', 10)->unsigned()->nullable;\n+    $table->Decimal('amount',28,2)->unsigned()->default(\"0.00\")->nullable;\n     $table->string('trx',40)->nullable();\n     $table->string('remark',255)->nullable();\n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714986759661,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,12 +15,12 @@\n     {\n         Schema::create('supplier_payments', function (Blueprint $table) {\n             $table->id();\n             \n-\t$table->integer('supplier_id',10)->unsigned()->nullable;\n-    $table->integer('purchase_id',10)->unsigned()->nullable;\n-    $table->integer('purchase_return_id', 10)->unsigned()->nullable;\n-    $table->Decimal('amount',28,2)->unsigned()->default(\"0.00\")->nullable;\n+\t$table->integer('supplier_id',10)->unsigned()->nullable();\n+    $table->integer('purchase_id',10)->unsigned()->nullable();\n+    $table->integer('purchase_return_id', 10)->unsigned()->nullable();\n+    $table->Decimal('amount',28,2)->unsigned()->default(\"0.00\")->nullable();-\n     $table->string('trx',40)->nullable();\n     $table->string('remark',255)->nullable();\n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714986766331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     {\n         Schema::create('supplier_payments', function (Blueprint $table) {\n             $table->id();\n             \n-\t$table->integer('supplier_id',10)->unsigned()->nullable()->defau;\n+\t$table->integer('supplier_id',10)->unsigned()->nullable()->default();\n     $table->integer('purchase_id',10)->unsigned()->nullable();\n     $table->integer('purchase_return_id', 10)->unsigned()->nullable();\n     $table->Decimal('amount',28,2)->unsigned()->default(\"0.00\")->nullable();\n     $table->string('trx',40)->nullable();\n"
+                }
+            ],
+            "date": 1714986571730,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('supplier_payments', function (Blueprint $table) {\n            $table->id();\n            \n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('supplier_payments');\n    }\n};\n"
+        }
+    ]
+}

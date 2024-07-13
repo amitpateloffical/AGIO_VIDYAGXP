@@ -1,0 +1,46 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_070916_create_customers_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 7,
+            "patches": [
+                {
+                    "date": 1714979371969,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714979378559,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,8 +15,11 @@\n     {\n         Schema::create('customers', function (Blueprint $table) {\n             $table->id();\n             $table->string('name')->nullable();\n+            $table->string('email')->nullable();\n+            $table->string('name')->nullable();\n+            $table->string('name')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714979384095,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n         Schema::create('customers', function (Blueprint $table) {\n             $table->id();\n             $table->string('name')->nullable();\n             $table->string('email')->nullable();\n+            $table->string('mobil')->nullable();\n             $table->string('name')->nullable();\n-            $table->string('name')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714979391907,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,10 +16,10 @@\n         Schema::create('customers', function (Blueprint $table) {\n             $table->id();\n             $table->string('name')->nullable();\n             $table->string('email')->nullable();\n-            $table->string('mobil')->nullable();\n-            $table->string('name')->nullable();\n+            $table->string('mobile')->nullable();\n+            $table->string('address')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714979402452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\n             $table->string('name')->nullable();\n             $table->string('email')->nullable();\n             $table->string('mobile')->nullable();\n-            $table->string('address')->nullable();\n+            $table->long('address')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714979410313,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,9 +17,9 @@\n             $table->id();\n             $table->string('name')->nullable();\n             $table->string('email')->nullable();\n             $table->string('mobile')->nullable();\n-            $table->long('address')->nullable();\n+            $table->text('address')->nullable();\n \n             $table->timestamps();\n         });\n     }\n"
+                },
+                {
+                    "date": 1714993740636,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             $table->string('name')->nullable();\n             $table->string('email')->nullable();\n             $table->string('mobile')->nullable();\n             $table->text('address')->nullable();\n-\n+            $table->date('birthdate')->nullable();\n             $table->timestamps();\n         });\n     }\n \n"
+                },
+                {
+                    "date": 1714993799219,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -18,9 +18,9 @@\n             $table->string('name')->nullable();\n             $table->string('email')->nullable();\n             $table->string('mobile')->nullable();\n             $table->text('address')->nullable();\n-            $table->date('birthdate')->nullable();\n+            // $table->date('birthdate')->nullable();\n             $table->timestamps();\n         });\n     }\n \n"
+                }
+            ],
+            "date": 1714979371969,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('customers', function (Blueprint $table) {\n            $table->id();\n            $table->string('name')->nullable();\n\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('customers');\n    }\n};\n"
+        }
+    ]
+}

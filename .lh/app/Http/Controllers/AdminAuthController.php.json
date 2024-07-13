@@ -1,0 +1,22 @@
+{
+    "sourceFile": "app/Http/Controllers/AdminAuthController.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 1,
+            "patches": [
+                {
+                    "date": 1714997343985,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714997357759,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,12 @@\n <?php\n \n namespace App\\Http\\Controllers;\n \n+use App\\Http\\Controllers\\Controller;\n+use Illuminate\\Foundation\\Auth\\AuthenticatesUsers;\n use Illuminate\\Http\\Request;\n+use Laramin\\Utility\\Onumoti;\n \n class AdminAuthController extends Controller\n {\n     use AuthenticatesUsers;\n"
+                }
+            ],
+            "date": 1714997343985,
+            "name": "Commit-0",
+            "content": "<?php\n\nnamespace App\\Http\\Controllers;\n\nuse Illuminate\\Http\\Request;\n\nclass AdminAuthController extends Controller\n{\n    use AuthenticatesUsers;\n\n    /**\n     * Where to redirect users after login / registration.\n     *\n     * @var string\n     */\n    public $redirectTo = 'admin';\n\n    /**\n     * Create a new controller instance.\n     *\n     * @return void\n     */\n    public function __construct()\n    {\n        parent::__construct();\n        $this->middleware('admin.guest')->except('logout');\n    }\n\n    /**\n     * Show the application's login form.\n     *\n     * @return \\Illuminate\\Http\\Response\n     */\n    public function showLoginForm()\n    {\n        $pageTitle = \"Login\";\n        return view('admin.auth.login', compact('pageTitle'));\n    }\n\n    /**\n     * Get the guard to be used during authentication.\n     *\n     * @return \\Illuminate\\Contracts\\Auth\\StatefulGuard\n     */\n    protected function guard()\n    {\n        return auth()->guard('admin');\n    }\n\n    public function username()\n    {\n        return 'username';\n    }\n\n    public function login(Request $request)\n    {\n\n        $this->validateLogin($request);\n\n        $request->session()->regenerateToken();\n\n        Onumoti::getData();\n\n        // If the class is using the ThrottlesLogins trait, we can automatically throttle\n        // the login attempts for this application. We'll key this by the username and\n        // the IP address of the client making these requests into this application.\n        if (method_exists($this, 'hasTooManyLoginAttempts') &&\n            $this->hasTooManyLoginAttempts($request)) {\n            $this->fireLockoutEvent($request);\n            return $this->sendLockoutResponse($request);\n        }\n\n        if ($this->attemptLogin($request)) {\n            return $this->sendLoginResponse($request);\n        }\n\n        // If the login attempt was unsuccessful we will increment the number of attempts\n        // to login and redirect the user back to the login form. Of course, when this\n        // user surpasses their maximum number of attempts they will get locked out.\n        $this->incrementLoginAttempts($request);\n\n        return $this->sendFailedLoginResponse($request);\n    }\n\n\n    public function logout(Request $request)\n    {\n        $this->guard('admin')->logout();\n        $request->session()->invalidate();\n        return $this->loggedOut($request) ?: redirect($this->redirectTo);\n    }\n}\n"
+        }
+    ]
+}

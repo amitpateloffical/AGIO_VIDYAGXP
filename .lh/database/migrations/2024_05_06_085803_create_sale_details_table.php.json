@@ -1,0 +1,34 @@
+{
+    "sourceFile": "database/migrations/2024_05_06_085803_create_sale_details_table.php",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 4,
+            "patches": [
+                {
+                    "date": 1714985902101,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1714985908232,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n             $table->id();\n             $table->integer('sale_id',10)->unsigned();\n             $table->integer('product_id',10)->unsigned();\n             $table->integer('quantity', 10)->unsigned()->nullable()->default(0);\n-\t    $table->double('price',28,8)->nullable();\n-\t     $table->double('total')->nullable();\n+                $table->double('price',28,8)->nullable();\n+                $table->double('total')->nullable();\n \n \n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1714985931668,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -17,10 +17,10 @@\n             $table->id();\n             $table->integer('sale_id',10)->unsigned();\n             $table->integer('product_id',10)->unsigned();\n             $table->integer('quantity', 10)->unsigned()->nullable()->default(0);\n-                $table->double('price',28,8)->nullable();\n-                $table->double('total')->nullable();\n+            $table->double('price',28)->nullable();\n+            $table->double('total')->nullable();\n \n \n             $table->timestamps();\n         });\n"
+                },
+                {
+                    "date": 1714993458178,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,12 +14,12 @@\n     public function up()\n     {\n         Schema::create('sale_details', function (Blueprint $table) {\n             $table->id();\n-            $table->integer('sale_id',10)->unsigned();\n-            $table->integer('product_id',10)->unsigned();\n+            $table->integer('sale_id')->unsigned();\n+            $table->integer('product_id')->unsigned();\n             $table->integer('quantity', 10)->unsigned()->nullable()->default(0);\n-            $table->double('price',28)->nullable();\n+            $table->double('price')->nullable();\n             $table->double('total')->nullable();\n \n \n             $table->timestamps();\n"
+                },
+                {
+                    "date": 1714993464158,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -16,9 +16,9 @@\n         Schema::create('sale_details', function (Blueprint $table) {\n             $table->id();\n             $table->integer('sale_id')->unsigned();\n             $table->integer('product_id')->unsigned();\n-            $table->integer('quantity', 10)->unsigned()->nullable()->default(0);\n+            $table->integer('quantity')->unsigned()->nullable()->default(0);\n             $table->double('price')->nullable();\n             $table->double('total')->nullable();\n \n \n"
+                }
+            ],
+            "date": 1714985902101,
+            "name": "Commit-0",
+            "content": "<?php\n\nuse Illuminate\\Database\\Migrations\\Migration;\nuse Illuminate\\Database\\Schema\\Blueprint;\nuse Illuminate\\Support\\Facades\\Schema;\n\nreturn new class extends Migration\n{\n    /**\n     * Run the migrations.\n     *\n     * @return void\n     */\n    public function up()\n    {\n        Schema::create('sale_details', function (Blueprint $table) {\n            $table->id();\n            $table->integer('sale_id',10)->unsigned();\n            $table->integer('product_id',10)->unsigned();\n            $table->integer('quantity', 10)->unsigned()->nullable()->default(0);\n\t    $table->double('price',28,8)->nullable();\n\t     $table->double('total')->nullable();\n\n\n            $table->timestamps();\n        });\n    }\n\n    /**\n     * Reverse the migrations.\n     *\n     * @return void\n     */\n    public function down()\n    {\n        Schema::dropIfExists('sale_details');\n    }\n};\n"
+        }
+    ]
+}
