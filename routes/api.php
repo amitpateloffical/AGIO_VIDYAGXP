@@ -26,4 +26,5 @@ use App\Http\Controllers\Api\ProductController;
 // Route::get('home', [HomeController::class, 'index'])->name('home');
 
 
+Route::post('/fetch/item', [ProductController::class, 'fetch_item'])->name('api.fetch.item');
 Route::post('/product/barcode', [ProductController::class, 'get_product_by_barcode'])->name('productBarcode');
