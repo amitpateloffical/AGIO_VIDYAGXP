@@ -12,4 +12,9 @@ class StoreMST extends Model
     protected $table = 'itemmst';
     
     protected $connection = 'mysql2';
+
+    public function binbts()
+    {
+        return $this->hasMany(BinBtBal::class, 'ItemCd', 'ItemCd');
+    }
 }

@@ -7,6 +7,8 @@ use App\Models\barcode\product;
 use Error;
 use Illuminate\Http\Request;
 use App\Models\BinBtBal;
+use App\Models\StoreMST;
+use App\Models\Qcarhd;
 
 class ProductController extends Controller
 {
@@ -51,7 +53,22 @@ class ProductController extends Controller
         
         try {
             
-            $binbtbal = BinBtBal::where('ItemCd', $request->item_code)->with(['items_master', 'qcarhd'])->first();
+            // $binbtbal = BinBtBal::where('ItemCd', $request->item_code)->with(['items_master', 'qcarhd'])->first();
+
+            $binbtbal = null;
+            $qcarhd = null;
+            
+            $storemst = StoreMST::where('ItemCd', $request->item_code)->with('binbts')->first();
+
+            if ($request->grn_no) {
+                $binbtbal = BinBtBal::where('GrnBtchId', $request->grn_no)->where('ItemCd', $request->item_code)->with(['items_master', 'qcarhd'])->first();
+                $qcarhd = Qcarhd::where([
+                    'GrnBtchId' => $request->grn_no,
+                    'ItemCd' => $request->item_code
+                ])->first();
+                // return $qcarhd;
+            }
+
             
             $data = [
                 'item_code' => '',
@@ -63,12 +80,14 @@ class ProductController extends Controller
                 'ArId' => ''
             ];
             
-            $data['item_code'] = $binbtbal->ItemCd;
-            $data['batch_status'] = $binbtbal->qcarhd ? $binbtbal->qcarhd->QCResult : '';
-            $data['item_name'] = $binbtbal->items_master ? $binbtbal->items_master->ItemName : '';
-            $data['location_code'] = $binbtbal->qcarhd ? $binbtbal->qcarhd->LocCd : '';
-            $data['GrnBtchId'] = $binbtbal->GrnBtchId;
-            $data['ARId'] = $binbtbal->ARId;
+            // $data['item_code'] = $storemst->ItemCd;
+            $data['item_name'] = ($binbtbal && $binbtbal->items_master) ? $binbtbal->items_master->ItemName : '';
+            $data['location_code'] = $qcarhd ? $qcarhd->LocCd : '';
+            $data['GrnBtchId'] = collect($storemst->binbts)->pluck('GrnBtchId');
+            $data['ARId'] = $binbtbal ? $binbtbal->ARId : '';
+            $data['batch_status'] = $qcarhd ? $qcarhd->QcStatus : '';
+
+
             
             $res['body'] = $data;
             

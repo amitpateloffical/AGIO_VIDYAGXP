@@ -1,6 +1,5 @@
-@extends('admin.layouts.app')
-@section('panel')
-{{--  @section('content')  --}}
+<?php $__env->startSection('panel'); ?>
+
 
 <style>
     .image_head {
@@ -149,13 +148,13 @@ style="position: absolute;
                     </div>
                     <h3>Generate Barcode</h3>
                     <div class="logo logo-ajio">
-                        {{--  <img src="{{ asset('user/images/ajio-removebg-preview.png') }}" alt="Ajio Logo" style="margin-top: -20px;">  --}}
+                        
                     </div>
                 </div>
             </div>
 
-            <form action="{{route('store')}}" method="post">
-                @csrf
+            <form action="<?php echo e(route('store')); ?>" method="post">
+                <?php echo csrf_field(); ?>
 
                 <div class="col-12">
                     <label for="item_code">Item Code :</label>
@@ -332,7 +331,7 @@ style="position: absolute;
     $(document).ready(async function() {
         $('input[name=item_code]').on('change', async function() {
              let itemCode = $(this).val();
-             let postUrl = "{{ route('api.fetch.item') }}";
+             let postUrl = "<?php echo e(route('api.fetch.item')); ?>";
              
              $('#fetchSpinner').show();
              $('#fetchSpinner').css('display', 'flex');
@@ -369,7 +368,7 @@ style="position: absolute;
         $('select[name=grn_no]').on('change', async function() {
              let itemCode = $('input[name=item_code]').val();
              let grn_no = $(this).val();
-             let postUrl = "{{ route('api.fetch.item') }}";
+             let postUrl = "<?php echo e(route('api.fetch.item')); ?>";
              
              $('#fetchSpinner').show();
              $('#fetchSpinner').css('display', 'flex');
@@ -397,4 +396,6 @@ style="position: absolute;
         })
     })
 </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Applications/XAMPP/xamppfiles/htdocs/AGIO_VIDYAGXP_WAREHOUSE/resources/views/create.blade.php ENDPATH**/ ?>
